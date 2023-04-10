@@ -1,0 +1,37 @@
+%button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 34px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: $main-font, sans-serif;
+  font-weight: $font-weight;
+  line-height: $body-line-height;
+  cursor: pointer;
+
+  color: getColor("black");
+  background-color: getColor("primary");
+
+  border-radius: $button-border-radius;
+  border-color: transparent;
+
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: getColor("hover");
+  }
+}
+
+.button__signup {
+  @extend %button;
+  width: 100px;
+}
+
+.button__show-more {
+  @extend %button;
+  width: 120px;
+}

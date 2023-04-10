@@ -1,0 +1,9 @@
+.heading {
+  font-size: $heading-font-size;
+  line-height: $heading-line-height;
+  color: getColor("black");
+
+  &.heading--distance {
+    margin-bottom: 50px;
+  }
+}

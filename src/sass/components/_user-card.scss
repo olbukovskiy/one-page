@@ -1,0 +1,48 @@
+// 20 16 29 29
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  flex-basis: 100%;
+  padding: 20px;
+  border-radius: $card-border-radius;
+  border-color: transparent;
+
+  background-color: getColor("white");
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: calc((100% - 58px) / 3);
+  }
+
+  @media screen and (min-width: 2560px) {
+    flex-basis: calc((100%-58px) / 3);
+  }
+
+  &__photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+  }
+
+  &__email,
+  &__phone {
+    font-family: $main-font, sans-serif;
+    font-size: $body-font-size;
+    font-weight: $font-weight;
+    line-height: $body-line-height;
+    color: getColor("black");
+  }
+}

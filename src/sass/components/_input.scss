@@ -1,0 +1,59 @@
+.input {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 14px 16px;
+
+  color: getColor("black");
+  border: 1px solid getColor("input-border");
+  border-radius: $input-border-radius;
+}
+
+%input__label {
+  color: getColor("placeholder");
+  font-family: $main-font, sans-serif;
+}
+
+.input__toplb-container {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+  overflow: hidden;
+}
+
+.input__toplb {
+  @extend %input__label;
+  @include transition(transform);
+  @include transition(font-size);
+  @include transition(line-height);
+}
+
+.input__bottom-lb {
+  position: absolute;
+  bottom: -18px;
+  left: 16px;
+
+  @extend %input__label;
+  font-size: $bottom-label;
+  line-height: $bottom-label-lh;
+
+  @include transition(color);
+}
+
+.input:focus + .input__toplb-container,
+.input:not(:placeholder-shown) + .input__toplb-container {
+  transform: translateY(-34px);
+  font-size: $bottom-label;
+  line-height: $bottom-label-lh;
+}
+
+.input:focus:invalid ~ .input__bottom-lb,
+.input:invalid:not(:placeholder-shown) ~ .input__bottom-lb {
+  color: getColor("error");
+}
